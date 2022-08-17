@@ -107,7 +107,8 @@ main:
 
     move $t1, $s2                                   # term = A[0] = a
     li $t0, 0                                       # i = 0
-        
+
+    # populate the matrix A with terms of the GP series 
     populate_loop:
     bge $t0, $t3, end_populate_loop
 
