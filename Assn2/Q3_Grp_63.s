@@ -8,8 +8,14 @@
 
 # Data segment
 .data
-    input_prompt:                                                       # Prompt for reading input
-        .asciiz "Enter four positive integers m, n, a and r : (each integer on a new line)\n"
+    m_input_prompt:                                                     # Prompt for reading m as input
+        .asciiz "Enter a positive integer m :"
+    n_input_prompt:                                                     # Prompt for reading n as input
+        .asciiz "Enter a positive integer n :"                          
+    a_input_prompt:                                                     # Prompt for reading a as input
+        .asciiz "Enter a positive integer a :"                          
+    r_input_prompt:                                                     # Prompt for reading r as input
+        .asciiz "Enter a positive integer r :"                          
     m_lezero_message:                                                   # Error message for m <= 0
         .asciiz "m should be greater than 0, please try again!\n"
     n_lezero_message:                                                   # Error message for n <= 0
@@ -42,8 +48,8 @@ main:
 
     jal initStack                   # Initialize stack
 
-    input_loop:
-    la $a0, input_prompt            # print "Enter four positive integers m, n, a and r : \n"
+    input_m:
+    la $a0, m_input_prompt          # print "Enter a positive integer m : "
     li $v0, 4
     syscall
 
@@ -52,15 +58,30 @@ main:
     blez $v0, m_lezero              # if m <= 0, print error message and exit
     move $s0, $v0
 
+    input_n:
+    la $a0, n_input_prompt          # print "Enter a positive integer n : "
+    li $v0, 4
+    syscall
+
     li $v0, 5                       # read value of n
     syscall
     blez $v0, n_lezero              # if n <= 0, print error message and exit
     move $s1, $v0
 
+    input_a:
+    la $a0, a_input_prompt          # print "Enter a positive integer a : "
+    li $v0, 4
+    syscall
+
     li $v0, 5                       # read value of a
     syscall
     blez $v0, a_lezero              # if a <= 0, print error message and exit
     move $s2, $v0
+
+    input_r:
+    la $a0, r_input_prompt          # print "Enter a positive integer r : "
+    li $v0, 4
+    syscall
 
     li $v0, 5                       # read value of r
     syscall
@@ -288,25 +309,25 @@ m_lezero:
         la $a0, m_lezero_message                        # print error message for m <= 0
         li $v0, 4
         syscall
-        b input_loop
+        b input_m
 
 n_lezero:
         la $a0, n_lezero_message                        # print error message for n <= 0
         li $v0, 4
         syscall
-        b input_loop
+        b input_n
 
 a_lezero:
         la $a0, a_lezero_message                        # print error message for a <= 0
         li $v0, 4
         syscall
-        b input_loop
+        b input_a
 
 r_lezero:
         la $a0, r_lezero_message                        # print error message for r <= 0
         li $v0, 4
         syscall
-        b input_loop
+        b input_r
 
 exit:
         li $v0, 10                                      # exit
