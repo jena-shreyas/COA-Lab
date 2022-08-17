@@ -9,21 +9,21 @@
 # Data segment
 .data
     input_prompt:                                                       # Prompt for reading input
-        .asciiz "Enter four positive integers m, n, a and r : \n"
+        .asciiz "Enter four positive integers m, n, a and r : (each integer on a new line)\n"
     m_lezero_message:                                                   # Error message for m <= 0
-        .asciiz "m should be greater than 0!\n"
+        .asciiz "m should be greater than 0, please try again!\n"
     n_lezero_message:                                                   # Error message for n <= 0
-        .asciiz "n should be greater than 0!\n"
+        .asciiz "n should be greater than 0, please try again!\n"
     a_lezero_message:                                                   # Error message for a <= 0
-        .asciiz "a should be greater than 0!\n"
+        .asciiz "a should be greater than 0, please try again!\n"
     r_lezero_message:                                                   # Error message for r <= 0
-        .asciiz "r should be greater than 0!\n"
+        .asciiz "r should be greater than 0, please try again!\n"
     A_output:                                                           # Message for displaying elements of matrix A
-        .asciiz "Printing the elements of matrix A\n"
+        .asciiz "Printing the elements of matrix A :\n"
     space:                                                              # Message for displaying elements of matrix A
         .asciiz " "
     B_output:                                                           # Message for displaying elements of matrix B
-        .asciiz "Printing the elements of matrix B\n"
+        .asciiz "Printing the elements of matrix B :\n"
     newline:                                                            # Message for displaying newline
         .asciiz "\n"
 
@@ -42,6 +42,7 @@ main:
 
     jal initStack                   # Initialize stack
 
+    input_loop:
     la $a0, input_prompt            # print "Enter four positive integers m, n, a and r : \n"
     li $v0, 4
     syscall
@@ -66,9 +67,8 @@ main:
     blez $v0, r_lezero              # if r <= 0, print error message and exit
     move $s3, $v0
 
-    mul $a0, $s0, $s1               # a0 = m * n
-
     malloc_stack_A:
+    mul $a0, $s0, $s1               # a0 = m * n
     jal mallocInStack               # call mallocInStack to allocate memory for matrix A
     move $s4, $v0                   # $s4 <= $v0 = starting address of matrix A
 
@@ -137,7 +137,7 @@ initStack:
     addi $sp, $sp, -4
     sw $fp, ($sp)
     move $fp, $sp
-    jr $ra
+    jr $ra                                          # return to caller function
 
 
 # function to push elements in stack
@@ -148,7 +148,7 @@ pushToStack:
 
     addi $a1, $a1, -4                               # $a1 = $a1 - 4 (make space for new element in stack)
     sw $a0, ($a1)                                   # store $a0 at the current location pointed to by $a1 in stack
-    jr $ra
+    jr $ra                                          # return to caller function
 
 
 # function to allocate memory for stack
@@ -156,7 +156,7 @@ mallocInStack:
     mul $t0, $a0, 4                                # $t0 <-- 4 * m * n
     move $v0, $sp                                   # store starting address of m*n array ($sp) in $v0
     sub $sp, $sp, $t0                               # sp <-- sp - 4 * m * n (to allocate space for m*n integers)  
-    jr $ra
+    jr $ra                                          # return to caller function
 
 
 # function to print matrix
@@ -217,7 +217,7 @@ printMatrix:
         lw $a1, 8($sp)                                   # restore value of n
         lw $a2, 4($sp)                                   # restore starting address of A[m*n]
         addiu $sp, $sp, 32                               # remove stack frame
-        jr $ra
+        jr $ra                                           # return to caller function
 
 
 # function to transpose given matrix
@@ -280,31 +280,33 @@ transposeMatrix:
         lw $a2, 4($sp)                                   # restore starting address of A[m*n]
         addiu $sp, $sp, 32                               # remove stack frame
 
-        jr $ra
+        jr $ra                                           # return to caller function
+
+
 
 m_lezero:
         la $a0, m_lezero_message                        # print error message for m <= 0
         li $v0, 4
         syscall
-        j exit
+        b input_loop
 
 n_lezero:
         la $a0, n_lezero_message                        # print error message for n <= 0
         li $v0, 4
         syscall
-        j exit
+        b input_loop
 
 a_lezero:
         la $a0, a_lezero_message                        # print error message for a <= 0
         li $v0, 4
         syscall
-        j exit
+        b input_loop
 
 r_lezero:
         la $a0, r_lezero_message                        # print error message for r <= 0
         li $v0, 4
         syscall
-        j exit
+        b input_loop
 
 exit:
         li $v0, 10                                      # exit
