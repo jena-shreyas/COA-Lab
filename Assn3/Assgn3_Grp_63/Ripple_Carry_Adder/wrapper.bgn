@@ -1,0 +1,360 @@
+Release 14.7 - Bitgen P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Loading device for application Rf_Device from file '7a100t.nph' in environment
+/home/shreyas/Xilinx/14.7/ISE_DS/ISE/.
+   "wrapper" is an NCD, version 3.2, device xc7a100t, package csg324, speed -1
+Opened constraints file wrapper.pcf.
+
+Wed Aug 31 00:18:49 2022
+
+/home/shreyas/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/bitgen -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:3 -g CclkPin:PullUp -g M0Pin:PullUp -g M1Pin:PullUp -g M2Pin:PullUp -g ProgPin:PullUp -g InitPin:Pullup -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g Disable_JTAG:No -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g ExtMasterCclk_en:Disable -g ConfigFallback:Disable -g BPI_page_size:1 -g BPI_sync_mode:Disable -g SPI_32bit_addr:No -g SPI_buswidth:1 -g SPI_Fall_Edge:No -g OverTempPowerDown:Disable -g USR_ACCESS:None -g JTAG_XADC:Enable -g DCIUpdateMode:AsRequired -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g Match_cycle:Auto -g Security:None -g ICAP_select:Auto -g DonePipe:Yes -g Encrypt:No wrapper.ncd 
+
+ERROR:Bitgen:342 - This design contains pins which have locations (LOC) that are
+   not user-assigned or I/O Standards (IOSTANDARD) that are not user-assigned. 
+   This may cause I/O contention or incompatibility with the board power or
+   connectivity affecting performance, signal integrity or in extreme cases
+   cause damage to the device or the components to which it is connected.  To
+   prevent this error, it is highly suggested to specify all pin locations and
+   I/O standards to avoid potential contention or conflicts and allow proper
+   bitstream creation.  To demote this error to a warning and allow bitstream
+   creation with unspecified I/O location or standards, you may apply the
+   following bitgen switch: -g UnconstrainedPins:Allow
+This message applies to the following I/O ports:
+   in1<33>
+   in1<34>
+   in1<35>
+   in1<36>
+   in2<22>
+   in2<23>
+   in2<24>
+   in1<40>
+   in2<26>
+   in1<42>
+   in2<28>
+   in2<29>
+   in2<30>
+   in2<31>
+   in2<32>
+   in2<33>
+   in2<34>
+   in2<35>
+   in2<36>
+   in2<37>
+   in2<38>
+   in2<39>
+   in2<40>
+   in2<41>
+   in2<42>
+   in2<43>
+   in2<44>
+   in2<45>
+   in2<46>
+   in2<47>
+   in2<48>
+   in2<49>
+   in2<50>
+   in2<51>
+   in2<52>
+   in2<53>
+   in2<54>
+   in2<55>
+   in2<9>
+   in2<57>
+   in2<58>
+   in2<16>
+   in2<10>
+   in2<11>
+   in2<12>
+   in2<13>
+   sum<50>
+   sum<51>
+   sum<52>
+   sum<53>
+   sum<54>
+   sum<55>
+   sum<56>
+   sum<57>
+   sum<58>
+   sum<59>
+   sum<10>
+   sum<11>
+   sum<12>
+   sum<13>
+   sum<14>
+   sum<15>
+   sum<16>
+   sum<17>
+   sum<18>
+   sum<19>
+   sum<20>
+   sum<21>
+   sum<22>
+   sum<23>
+   sum<24>
+   sum<25>
+   sum<26>
+   sum<27>
+   sum<28>
+   sum<29>
+   sum<30>
+   sum<31>
+   sum<32>
+   sum<33>
+   sum<34>
+   sum<38>
+   sum<36>
+   sum<37>
+   sum<35>
+   sum<39>
+   sum<40>
+   sum<46>
+   sum<42>
+   in1<28>
+   in1<31>
+   sum<43>
+   sum<41>
+   in1<30>
+   sum<44>
+   in1<32>
+   in2<18>
+   in2<19>
+   in2<20>
+   in2<21>
+   in1<37>
+   in1<38>
+   in1<39>
+   in2<25>
+   in1<41>
+   in2<27>
+   in1<43>
+   in1<44>
+   in1<45>
+   in1<46>
+   in1<47>
+   in1<48>
+   in1<49>
+   in1<50>
+   in1<51>
+   in1<52>
+   in1<53>
+   in1<54>
+   in1<55>
+   in1<56>
+   in1<57>
+   in1<58>
+   in1<59>
+   in1<60>
+   in1<61>
+   in1<62>
+   in1<63>
+   in2<56>
+   in2<0>
+   in2<1>
+   in2<2>
+   in2<3>
+   in2<4>
+   in2<5>
+   in2<6>
+   in2<7>
+   in2<8>
+   in2<59>
+   in2<60>
+   in2<61>
+   in2<62>
+   in2<63>
+   in2<14>
+   in2<15>
+   rst
+   in2<17>
+   sum<0>
+   sum<1>
+   sum<2>
+   sum<3>
+   sum<4>
+   sum<5>
+   sum<6>
+   sum<7>
+   sum<8>
+   sum<9>
+   sum<60>
+   sum<61>
+   sum<62>
+   sum<63>
+   cout
+   cin
+   in1<0>
+   in1<1>
+   in1<2>
+   in1<3>
+   in1<4>
+   clk
+   in1<5>
+   in1<6>
+   in1<7>
+   in1<8>
+   in1<9>
+   in1<10>
+   in1<11>
+   in1<12>
+   in1<13>
+   in1<14>
+   in1<15>
+   in1<22>
+   in1<21>
+   in1<20>
+   in1<23>
+   in1<16>
+   in1<17>
+   in1<18>
+   in1<19>
+   in1<24>
+   in1<25>
+   in1<26>
+   in1<27>
+   sum<48>
+   in1<29>
+   sum<47>
+   sum<45>
+   sum<49>
+INFO:Bitgen:40 - Replacing "Auto" with "NoWait" for option "Match_cycle".  Most
+   commonly, bitgen has determined and will use a specific value instead of the
+   generic command-line value of "Auto".  Alternately, this message appears if
+   the same option is specified multiple times on the command-line.  In this
+   case, the option listed last will be used.
+ERROR:Bitgen:157 - Bitgen will terminate because of the above errors.
+Summary of Bitgen Options:
++----------------------+----------------------+
+| Option Name          | Current Setting      |
++----------------------+----------------------+
+| Compress             | (Not Specified)*     |
++----------------------+----------------------+
+| Readback             | (Not Specified)*     |
++----------------------+----------------------+
+| CRC                  | Enable**             |
++----------------------+----------------------+
+| DebugBitstream       | No**                 |
++----------------------+----------------------+
+| ConfigRate           | 3**                  |
++----------------------+----------------------+
+| StartupClk           | Cclk**               |
++----------------------+----------------------+
+| CclkPin              | Pullup**             |
++----------------------+----------------------+
+| DonePin              | Pullup*              |
++----------------------+----------------------+
+| M0Pin                | Pullup**             |
++----------------------+----------------------+
+| M1Pin                | Pullup**             |
++----------------------+----------------------+
+| M2Pin                | Pullup**             |
++----------------------+----------------------+
+| ProgPin              | Pullup**             |
++----------------------+----------------------+
+| InitPin              | Pullup**             |
++----------------------+----------------------+
+| TckPin               | Pullup**             |
++----------------------+----------------------+
+| TdiPin               | Pullup**             |
++----------------------+----------------------+
+| TdoPin               | Pullup**             |
++----------------------+----------------------+
+| TmsPin               | Pullup**             |
++----------------------+----------------------+
+| UnusedPin            | Pulldown**           |
++----------------------+----------------------+
+| GWE_cycle            | 6**                  |
++----------------------+----------------------+
+| GTS_cycle            | 5**                  |
++----------------------+----------------------+
+| OverTempPowerDown    | Disable**            |
++----------------------+----------------------+
+| LCK_cycle            | NoWait*              |
++----------------------+----------------------+
+| Match_cycle          | NoWait               |
++----------------------+----------------------+
+| DONE_cycle           | 4**                  |
++----------------------+----------------------+
+| Persist              | No*                  |
++----------------------+----------------------+
+| DonePipe             | Yes**                |
++----------------------+----------------------+
+| Security             | None**               |
++----------------------+----------------------+
+| UserID               | 0xFFFFFFFF**         |
++----------------------+----------------------+
+| ActiveReconfig       | No*                  |
++----------------------+----------------------+
+| Encrypt              | No**                 |
++----------------------+----------------------+
+| EncryptKeySelect     | bbram*               |
++----------------------+----------------------+
+| Key0                 | pick*                |
++----------------------+----------------------+
+| StartCBC             | pick*                |
++----------------------+----------------------+
+| HKey                 | pick*                |
++----------------------+----------------------+
+| KeyFile              | (Not Specified)*     |
++----------------------+----------------------+
+| DCIUpdateMode        | AsRequired**         |
++----------------------+----------------------+
+| ICAP_Select          | Auto**               |
++----------------------+----------------------+
+| ConfigFallback       | Disable**            |
++----------------------+----------------------+
+| SelectMAPAbort       | Enable*              |
++----------------------+----------------------+
+| BPI_page_size        | 1**                  |
++----------------------+----------------------+
+| BPI_1st_read_cycle   | 1*                   |
++----------------------+----------------------+
+| next_config_addr     | None*                |
++----------------------+----------------------+
+| next_config_reboot   | Enable*              |
++----------------------+----------------------+
+| InitSignalsError     | Enable*              |
++----------------------+----------------------+
+| XADCPartialReconfig  | Disable*             |
++----------------------+----------------------+
+| XADCEnhancedLinearity | Off*                 |
++----------------------+----------------------+
+| JTAG_XADC            | Enable**             |
++----------------------+----------------------+
+| Disable_JTAG         | No**                 |
++----------------------+----------------------+
+| XADCPowerDown        | Disable*             |
++----------------------+----------------------+
+| Partial              | (Not Specified)*     |
++----------------------+----------------------+
+| ExtMasterCclk_en     | Disable**            |
++----------------------+----------------------+
+| BPI_sync_mode        | Disable**            |
++----------------------+----------------------+
+| SPI_32bit_addr       | No**                 |
++----------------------+----------------------+
+| SPI_buswidth         | 1**                  |
++----------------------+----------------------+
+| SPI_Fall_Edge        | No**                 |
++----------------------+----------------------+
+| RevisionSelect       | 00*                  |
++----------------------+----------------------+
+| RevisionSelect_tristate | Disable*             |
++----------------------+----------------------+
+| TIMER_CFG            | None*                |
++----------------------+----------------------+
+| TIMER_USR            | None*                |
++----------------------+----------------------+
+| USR_ACCESS           | None**               |
++----------------------+----------------------+
+| TimeStamp            | Default*             |
++----------------------+----------------------+
+| IEEE1532             | No*                  |
++----------------------+----------------------+
+| Binary               | No**                 |
++----------------------+----------------------+
+ *  Default setting.
+ ** The specified setting matches the default setting.
+
+There were 0 CONFIG constraint(s) processed from wrapper.pcf.
+
+
