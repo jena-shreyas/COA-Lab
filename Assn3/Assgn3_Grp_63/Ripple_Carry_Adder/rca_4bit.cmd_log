@@ -1,1 +1,0 @@
-xst -intstyle ise -ifn "/home/shreyas/Xilinx/14.7/ISE_DS/xilinx_progs/RCA/rca_4bit.xst" -ofn "/home/shreyas/Xilinx/14.7/ISE_DS/xilinx_progs/RCA/rca_4bit.syr" 
